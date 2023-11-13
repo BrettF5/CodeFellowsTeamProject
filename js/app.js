@@ -1,14 +1,43 @@
+let cigarName = document.getElementById('cigar-name').value;
+let cigarQuantity = document.getElementById('cigar-quantity').value;
+let allCigars = [];
+
+
+
+function Cigar(brand,quantity) {
+this.brand = brand;
+// this.strength = strength;// TO DO 
+this.quantity = quantity;
+
+}
+ 
+function initCigar (brand, quantity) {
+const cigarInstance = new Cigar (cigarName, cigarQuantity);// 
+}
+
+// initCigar('cigar 1', 20);
+// console.log(initCigar);
+
+function storeCigars()  {
+
+
+
+}
+
+
 
 //form
 //selects elements from DOM
 const form = document.getElementById('addCigarForm');
 const cigarList = document.getElementById('cigar-list');
 
+
+
 function handleSubmit(event){
 	event.preventDefault();
 	//stores values from form
-	const cigarName = document.getElementById('cigar-name').value;
-	const cigarQuantity = document.getElementById('cigar-quantity').value;
+	cigarName = document.getElementById('cigar-name').value;
+	cigarQuantity = document.getElementById('cigar-quantity').value;
 	//creates list element
 	const cigarItem = document.createElement('li');
 	cigarItem.className = 'cigar-Item';
@@ -20,6 +49,7 @@ function handleSubmit(event){
 	//appends elements
 	cigarItem.appendChild(cigarDetails);
 	 cigarList.appendChild(cigarItem);
+	initCigar(cigarName, cigarQuantity);
 	event.target.reset();
 }
 
@@ -31,3 +61,5 @@ function handleDelete(event) {
 }
 cigarList.addEventListener('click', handleDelete);
 form.addEventListener('submit', handleSubmit);
+
+
