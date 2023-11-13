@@ -14,12 +14,18 @@ h1{
 div{
     width:960px;
     margin: auto;
+
 }
 
 
-img{
+.main-img{
     width: 100%;
     opacity: 0.5;
+    
+   
+}
+.cigar-box{
+    
 }
 
 footer{
