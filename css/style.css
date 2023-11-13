@@ -55,23 +55,7 @@ footer{
     padding: 50px;
 }
 
-//Page two css for javascript
-ul{
-	width: 500px
-}
 
-li{
-	list-style: none;
-	margin: 10px;
-	display: inline-block;
-	border: black 2px solid;
-}
 
-span{
-	margin: 25px;
-}
-.delete-button{
-	background-color: red;
-}
 
 
