@@ -11,8 +11,9 @@ this.quantity = quantity;
 
 }
  
-function initCigar (brand, quantity) {
+function initCigar () {
 const cigarInstance = new Cigar (cigarName, cigarQuantity);// 
+allCigars.push(cigarInstance);
 }
 
 // initCigar('cigar 1', 20);
