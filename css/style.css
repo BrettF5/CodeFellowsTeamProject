@@ -1,15 +1,27 @@
-h1{
-    color: blue;
-}
-main{
-    
-    
+body{
+    color: white;
 }
 
-div{
-    height: 800px;
+header{
+    padding: 50px;
+    background-color: black;
+    
 }
+h1{
+    color:white;
+    font-size: 25px;
+}
+div{
+    width:960px;
+    margin: auto;
+}
+
 
 img{
-    height: 800px;
+    width: 100%;
+}
+
+footer{
+    background-color: black;
+    padding: 50px;
 }
