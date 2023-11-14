@@ -1,6 +1,7 @@
 let cigarName = document.getElementById('cigar-name').value;
 let cigarQuantity = document.getElementById('cigar-quantity').value;
 let allCigars = [];
+let cigarKey = 'cigar-key'
 
 
 
@@ -19,12 +20,22 @@ allCigars.push(cigarInstance);
 // initCigar('cigar 1', 20);
 // console.log(initCigar);
 
+
+// local storage functions
 function storeCigars()  {
-
-
+	 localStorage.setItem(cigarKey, JSON.stringify(allCigars));
 
 }
 
+function getCigar() {
+	const storedCigarText = localStorage.getItem(cigarKey);
+}
+
+function parseStoredCigars(storedCigarText) {
+	const parsedCigarObjects = JSON.parse(storedCigarText);
+
+
+}
 
 
 //form
@@ -51,6 +62,7 @@ function handleSubmit(event){
 	cigarItem.appendChild(cigarDetails);
 	 cigarList.appendChild(cigarItem);
 	initCigar(cigarName, cigarQuantity);
+	storeCigars();
 	event.target.reset();
 }
 
