@@ -1,113 +1,121 @@
-// Global variables
-let cigarNameInput = document.getElementById('cigar-name');
-let cigarQuantityInput = document.getElementById('cigar-quantity');
+/////////////////
+///Global
+////////////////
+let cigarName = document.getElementById('cigar-name').value;
+let cigarQuantity = document.getElementById('cigar-quantity').value;
 let allCigars = [];
 let cigarKey = 'cigar-key';
-let cigarList = document.getElementById('cigar-list'); // Move this to the global scope
+let cigarQuantityInt = 0;
+let cigarDetails;
 
-// Cigar constructor
+//////////////////////
+///Cigar Constructor
+/////////////////////
 function Cigar(brand, quantity) {
-  this.brand = brand;
-  this.quantity = quantity;
+    this.brand = brand;
+    // this.strength = strength;// TO DO 
+    this.quantity = quantity;
 }
 
-// Function to create new cigar instances
-function initCigar(brand, quantity) {
-  const cigarInstance = new Cigar(brand, quantity);
-  allCigars.push(cigarInstance);
-  storeCigars();
+/////////////////////////////////////////////
+//Function that creates new cigar instances
+////////////////////////////////////////////
+function initCigar() {
+    const cigarInstance = new Cigar(cigarName, cigarQuantity);
+    allCigars.push(cigarInstance);
 }
 
-// Function to store cigars in local storage
+////////////////////////////////
+///Functions for local storage
+///////////////////////////////
 function storeCigars() {
-  localStorage.setItem(cigarKey, JSON.stringify(allCigars));
+    localStorage.setItem(cigarKey, JSON.stringify(allCigars));
 }
 
-// Function to get cigars from local storage
 function getCigar() {
-  const storedCigarText = localStorage.getItem(cigarKey);
-  return storedCigarText = JSON.parse(storedCigarText)  `Brand: ${brand}, Quantity: ${quantity}`;
+    const storedCigarText = localStorage.getItem(cigarKey);
 }
 
-// Function to render the cigar inventory
-function renderCigarInventory(brand, quantity) {
-  const uL = document.createElement('ul');
-  cigarList.appendChild(uL); // Use cigarList here
-
-  const lI = document.createElement('li');
-  uL.appendChild(lI);
-  lI.textContent = `Brand: ${brand}, Quantity: ${quantity}`;
+function parseStoredCigars(storedCigarText) {
+    const parsedCigarObjects = JSON.parse(storedCigarText);
 }
 
-// Event handler for form submission
-function handleSubmit(event) {
-  event.preventDefault();
+const inventoryList = document.getElementById('inventory-list');
 
-  // Store values from form
-  const cigarName = cigarNameInput.value;
-  const cigarQuantity = cigarQuantityInput.value;
+function renderCigarInventory() {
+    const uL = document.createElement('ul');
+    inventoryList.appendChild(uL);
 
-//selects elements from DOM
+    const lI = document.createElement('li');
+    uL.appendChild(lI);
+    lI.textContent = 'hello';
+    // edit text for the page
+}
+
+renderCigarInventory();
+
+///////////////////////
+///Form/Event Handler
+//////////////////////
+
+// selects elements from DOM
 const form = document.getElementById('addCigarForm');
 const cigarList = document.getElementById('cigar-list');
-//Handles submit button
-function handleSubmit(event){
-	event.preventDefault();  
-   
-	//stores values from form
-	cigarName = document.getElementById('cigar-name').value;
-	cigarQuantity = document.getElementById('cigar-quantity').value;
-    //checks for correct inputs TODO
-    if (cigarName === '' || cigarQuantity === ''){
+
+// Handles submit button
+function handleSubmit(event) {
+    event.preventDefault();
+
+    // stores values from form
+    cigarName = document.getElementById('cigar-name').value;
+    cigarQuantity = document.getElementById('cigar-quantity').value;
+
+    // checks for correct inputs TODO
+    if (cigarName === '' || cigarQuantity === '') {
         alert('need an input');
-        return
-      }
-    //changes number string to an integer
-    let cigarQuantityInt = parseInt(cigarQuantity);
-	//creates list element
-	const cigarItem = document.createElement('li');
-	cigarItem.className = 'cigar-Item';
-	//creates div element
-	const cigarDetails = document.createElement('div')
-	cigarDetails.className = 'cigar-details';
-	cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantity}</span>
+        return;
+    }
+
+    // changes number string to an integer
+    cigarQuantityInt = parseInt(cigarQuantity);
+
+    // creates list element
+    const cigarItem = document.createElement('li');
+    cigarItem.className = 'cigar-Item';
+
+    // creates div element
+    cigarDetails = document.createElement('div');
+    cigarDetails.className = 'cigar-details';
+    cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantity}</span>
     <button class="delete-button">delete</button>
-    <button id="buttonPlus" onclick="increase">+</button>
-    <button id="button-minus" onclick="decrease">-</button>`
-    //appends elements
-	cigarItem.appendChild(cigarDetails);
-	cigarList.appendChild(cigarItem);
-	initCigar(cigarName, cigarQuantity);	
+    <button id="buttonPlus" onclick="changeQuantity(1)">+</button>
+    <button id="button-minus" onclick="changeQuantity(-1)">-</button>`;
+
+    // appends elements
+    cigarItem.appendChild(cigarDetails);
+    cigarList.appendChild(cigarItem);
+    initCigar(cigarName, cigarQuantity);
     event.target.reset();
-    
-}
-// Function to increase quantity
-function increaseQuantity() {
-    cigarQuantityInt += 1;
-    cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantityInt}</span>`
 }
 
-// Function to decrease quantity
-function decreaseQuantity() {
-    cigarQuantityInt -= 1;
+// Function to handle quantity change
+function changeQuantity(amount) {
+    cigarQuantityInt += amount;
+    updateCigarDetails();
 }
 
+// Function to update cigar details in the DOM
+function updateCigarDetails() {
+    cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantityInt}</span> <button class="delete-button">delete</button> <button id="buttonPlus" onclick="changeQuantity(1)">+</button> <button id="button-minus" onclick="changeQuantity(-1)">-</button>`;
+}
 
 function handleDelete(event) {
-  if (event.target.classList.contains('delete-button')) {
-    const cigarItem = event.target.parentElement.parentElement;
-    cigarList.removeChild(cigarItem);
-  }
+    if (event.target.classList.contains('delete-button')) {
+        const cigarItem = event.target.parentElement.parentElement;
+        cigarList.removeChild(cigarItem);
+    }
 }
-buttonPlus.addEventListener('click',increaseQuantity)
+
+// Event listeners
 cigarList.addEventListener('click', handleDelete);
-
-// Event listener for form submission
-const form = document.getElementById('addCigarForm'); // Add this line
 form.addEventListener('submit', handleSubmit);
-
-// Example: Render the initial cigar inventory
-const initialCigars = getCigar();
-initialCigars.forEach(cigar => {
-  renderCigarInventory(cigar.brand, cigar.quantity);
-});
