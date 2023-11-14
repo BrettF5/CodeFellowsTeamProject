@@ -26,7 +26,7 @@ function storeCigars() {
 // Function to get cigars from local storage
 function getCigar() {
   const storedCigarText = localStorage.getItem(cigarKey);
-  return storedCigarText ? JSON.parse(storedCigarText) : [];
+  return storedCigarText = JSON.parse(storedCigarText)  `Brand: ${brand}, Quantity: ${quantity}`;
 }
 
 // Function to render the cigar inventory
