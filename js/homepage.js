@@ -1,9 +1,9 @@
+'use strict';
 
-
-document.getElementById('button').eventListener('click');
+document.getElementById('button').addEventListener('click', handleShowCigarsButton);
 
 let localStorageData = localStorage.getItem('cigarKey');
-let localStorageContent = localStorage.getElementById('localStorageContent');
+let localStorageContent = document.getElementById('localStorageContent');
 localStorageContent.textContent = localStorageData;
 
 

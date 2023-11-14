@@ -26,19 +26,25 @@ allCigars.push(cigarInstance);
 ////////////////////////////////
 ///Functions for local storage
 ///////////////////////////////
+// put cigars in local storage
 function storeCigars()  {
 	 localStorage.setItem(cigarKey, JSON.stringify(allCigars));
 
 }
-
+// get cigars from local storage
 function getCigar() {
 	const storedCigarText = localStorage.getItem(cigarKey);
+	if(storedCigarText) {
+	return JSON.parse(storedCigarText);
+} else
+return [];
 }
 
-function parseStoredCigars(storedCigarText) {
-	const parsedCigarObjects = JSON.parse(storedCigarText);
+storeCigars();
+const retrievedCigars = getCigars();
+console.log(retrievedCigars)
 
-}
+
 const inventoryList = document.getElementById('inventory-list');
 
 function renderCigarInventory() {
