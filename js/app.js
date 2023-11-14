@@ -47,38 +47,59 @@ function handleSubmit(event) {
   const cigarName = cigarNameInput.value;
   const cigarQuantity = cigarQuantityInput.value;
 
-  // Create list element
-  const cigarItem = document.createElement('li');
-  cigarItem.className = 'cigar-Item';
-
-  // Create div element
-  const cigarDetails = document.createElement('div');
-  cigarDetails.className = 'cigar-details';
-  cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantity}</span>
+//selects elements from DOM
+const form = document.getElementById('addCigarForm');
+const cigarList = document.getElementById('cigar-list');
+//Handles submit button
+function handleSubmit(event){
+	event.preventDefault();  
+   
+	//stores values from form
+	cigarName = document.getElementById('cigar-name').value;
+	cigarQuantity = document.getElementById('cigar-quantity').value;
+    //checks for correct inputs TODO
+    if (cigarName === '' || cigarQuantity === ''){
+        alert('need an input');
+        return
+      }
+    //changes number string to an integer
+    let cigarQuantityInt = parseInt(cigarQuantity);
+	//creates list element
+	const cigarItem = document.createElement('li');
+	cigarItem.className = 'cigar-Item';
+	//creates div element
+	const cigarDetails = document.createElement('div')
+	cigarDetails.className = 'cigar-details';
+	cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantity}</span>
     <button class="delete-button">delete</button>
-    <button class="button" onclick="increaseQuantity()">+</button>
-    <button class="button" onclick="decreaseQuantity()">-</button>`;
-
-  // Append elements
-  cigarItem.appendChild(cigarDetails);
-  cigarList.appendChild(cigarItem);
-
-  // Initialize a new cigar
-  initCigar(cigarName, cigarQuantity);
-
-  // Reset the form
-  event.target.reset();
+    <button id="buttonPlus" onclick="increase">+</button>
+    <button id="button-minus" onclick="decrease">-</button>`
+    //appends elements
+	cigarItem.appendChild(cigarDetails);
+	cigarList.appendChild(cigarItem);
+	initCigar(cigarName, cigarQuantity);	
+    event.target.reset();
+    
+}
+// Function to increase quantity
+function increaseQuantity() {
+    cigarQuantityInt += 1;
+    cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantityInt}</span>`
 }
 
-// Event handler for delete button
+// Function to decrease quantity
+function decreaseQuantity() {
+    cigarQuantityInt -= 1;
+}
+
+
 function handleDelete(event) {
   if (event.target.classList.contains('delete-button')) {
     const cigarItem = event.target.parentElement.parentElement;
     cigarList.removeChild(cigarItem);
   }
 }
-
-// Event listener for delete button clicks
+buttonPlus.addEventListener('click',increaseQuantity)
 cigarList.addEventListener('click', handleDelete);
 
 // Event listener for form submission

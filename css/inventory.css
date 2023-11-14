@@ -50,7 +50,11 @@ span{
 	float: inline-start;
 }
 
-.button{
+#button-plus{
+	float: inline-end;
+}
+
+#button-minus{
 	float: inline-end;
 }
 .delete-button{
