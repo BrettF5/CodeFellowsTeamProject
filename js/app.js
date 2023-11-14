@@ -5,6 +5,7 @@ let cigarKey = 'cigar-key'
 
 
 
+
 function Cigar(brand,quantity) {
 this.brand = brand;
 // this.strength = strength;// TO DO 
@@ -34,10 +35,20 @@ function getCigar() {
 function parseStoredCigars(storedCigarText) {
 	const parsedCigarObjects = JSON.parse(storedCigarText);
 
+}
+const inventoryList = document.getElementById('inventory-list');
 
+function renderCigarInventory() {
+const uL = document.createElement('ul');
+inventoryList.appendChild(uL);
+
+const lI = document.createElement('li');
+uL.appendChild(lI);
+lI.textContent = 'hello' 
+// edit text for page
 }
 
-
+renderCigarInventory();
 //form
 //selects elements from DOM
 const form = document.getElementById('addCigarForm');
