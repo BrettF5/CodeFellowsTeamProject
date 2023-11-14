@@ -57,6 +57,14 @@ footer{
     padding: 50px;
 }
 
+
+#localStorageContent {
+    position: absolute;
+    top: 85%;
+    left: 20%;
+    text-align: center;
+    color: black;
+}
 /*Page 2*/
 
 
