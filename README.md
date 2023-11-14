@@ -4,7 +4,11 @@ Team Authors: Brett Fort, Larry Latorre, Andrea Thiel, Michelangelo Ascalon
 [Link to Team LAMB Presentation Deck](https://docs.google.com/presentation/d/1JXB5XX7Y00kMK1MGakeJeN2QJo5zWixYxuadhYulzU0/edit#slide=id.g2accd1c413_3_31)
 
 [Link to Team LAMB Team Agreement](https://docs.google.com/document/d/1DnRYGVy_Ne1N-uAFK4ordtxe5QRqDowI8nunydRfIcY/edit?usp=sharing)
- Wireframe
+
+ Project Prep 4
+ 
+ Wireframe:
+
 ![IMG_1546](https://github.com/BrettF5/DigitalCigarVault/assets/147453680/89086aac-4f88-4e5c-adb5-5d320db3c1bd)
 ![IMG_1547](https://github.com/BrettF5/DigitalCigarVault/assets/147453680/099c06d5-78c8-4042-93ec-2651d0d0d1f7)
 
@@ -35,6 +39,7 @@ As a user, when I remove an item from my inventory, I want the system to ask for
 As a user, I want to explore new cigars by clicking through images and discovering flavors and characteristics.
 As a user, I want the system to suggest purchases based on my existing inventory and preferences to help me make informed decisions.
 
+help from chat GPT
 
 
 
