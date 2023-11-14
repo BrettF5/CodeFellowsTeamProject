@@ -1,17 +1,65 @@
+
+header{
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+h1{
+	font-size: 50px;
+}
+
+main{
+	background-image: url('/img/cigars/istockphoto-1226721116-612x612.jpg');
+	width: 1135px;
+    height: 800px;
+    margin: auto;
+}
+
+.container{
+	background-color: wheat;
+	text-align: center;
+	width: 800px;
+	margin: auto;
+	opacity: .9;
+	padding: 50px;
+}
 ul{
-	width: 500px
+	width: 500px;
+	margin: auto;
+}
+
+.cigar-details{
+	
 }
 
 li{
 	list-style: none;
 	margin: 10px;
+	width: 500px;
 	display: inline-block;
-	border: black 2px solid;
+	border: black 1px solid;
+	background-color: white;
 }
 
 span{
-	margin: 25px;
+	margin: ;
+}
+
+.name{
+	float: inline-start;
+}
+
+.button{
+	float: inline-end;
 }
 .delete-button{
 	background-color: red;
+	float: inline-end;
+}
+
+footer{
+	background-color: black;
+	color: white;
+	padding: 50px;
 }

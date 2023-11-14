@@ -1,28 +1,31 @@
+/////////////////
+///Global
+////////////////
 let cigarName = document.getElementById('cigar-name').value;
 let cigarQuantity = document.getElementById('cigar-quantity').value;
 let allCigars = [];
 let cigarKey = 'cigar-key'
 
 
-
-
+//////////////////////
+///Cigar Constructor
+/////////////////////
 function Cigar(brand,quantity) {
 this.brand = brand;
 // this.strength = strength;// TO DO 
 this.quantity = quantity;
-
 }
- 
+/////////////////////////////////////////////
+//Function that creates new cigar instances
+////////////////////////////////////////////
 function initCigar () {
 const cigarInstance = new Cigar (cigarName, cigarQuantity);// 
 allCigars.push(cigarInstance);
 }
 
-// initCigar('cigar 1', 20);
-// console.log(initCigar);
-
-
-// local storage functions
+////////////////////////////////
+///Functions for local storage
+///////////////////////////////
 function storeCigars()  {
 	 localStorage.setItem(cigarKey, JSON.stringify(allCigars));
 
@@ -49,15 +52,21 @@ lI.textContent = 'hello'
 }
 
 renderCigarInventory();
-//form
+
+///////////////////////
+///Form/Event Handler
+//////////////////////
+
 //selects elements from DOM
 const form = document.getElementById('addCigarForm');
 const cigarList = document.getElementById('cigar-list');
-
-
-
+//Handles submit button
 function handleSubmit(event){
 	event.preventDefault();
+    //checks for correct inputs TODO
+
+
+    
 	//stores values from form
 	cigarName = document.getElementById('cigar-name').value;
 	cigarQuantity = document.getElementById('cigar-quantity').value;
@@ -67,14 +76,23 @@ function handleSubmit(event){
 	//creates div element
 	const cigarDetails = document.createElement('div')
 	cigarDetails.className = 'cigar-details';
-	cigarDetails.innerHTML = `<span>Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantity}</span>
-	<button class="delete-button">delete</button>`
-	//appends elements
+	cigarDetails.innerHTML = `<span class="name">Name: ${cigarName}</span>  <span>Quantity: ${cigarQuantity}</span>
+    <button class="delete-button">delete</button>
+    <button class="button" onclick="increase">+</button>
+    <button class="button" onclick="decrease">-</button>`
+    //appends elements
 	cigarItem.appendChild(cigarDetails);
-	 cigarList.appendChild(cigarItem);
-	initCigar(cigarName, cigarQuantity);
-	storeCigars();
-	event.target.reset();
+	cigarList.appendChild(cigarItem);
+	initCigar(cigarName, cigarQuantity);	event.target.reset();
+}
+// Function to increase quantity
+function increaseQuantity() {
+
+}
+
+// Function to decrease quantity
+function decreaseQuantity() {
+   
 }
 
 function handleDelete(event) {
