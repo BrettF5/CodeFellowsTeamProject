@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <title>Digital Cigar Vault</title>
 </head>
 
 <body>
     <header>
-        <h1><img class="logo" src="img/cigars/DCV logo.png" alt="DCV logo">Digital Cigar Vault</h1>
+        <img class="logo" src="img/cigars/DCV logo.png" alt="DCV logo">
+        <h1>Digital Cigar Vault</h1>
         <nav>
             <a href="">Home</a>
             <a href="inventory.html">Page2</a>
             <a href="page3.html">Page3</a>
+            <a href="humidity.html">Humidity Tracker</a>
 
         </nav>
     </header>
@@ -24,7 +28,7 @@
             <img class="main-img" src="img/cigars/istockphoto-654860318-612x612.jpg" alt="">
             <img class="cigar-box" src="img/cigars/istockphoto-835174192-612x612.png" alt="">
         
-            <button id="button">Show Cigars</button>
+            <button id="button" oneclick="disableButton()">Show Cigars</button>
             <ul id="cigar-list"></ul>
             <div id="localStorageContent"></div>
         </div>
