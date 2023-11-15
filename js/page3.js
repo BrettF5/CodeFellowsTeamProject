@@ -20,7 +20,7 @@ function AskQuestion(question, img1, img2, img3) {
     this.question = question;
     this.img1 = img1;
     this.img2 = img2;
-    this.img3 = img3; // Fix: Corrected the property name
+    this.img3 = img3;
 }
 
 // Sample AskQuestion instances
@@ -40,6 +40,7 @@ function renderQuestion() {
     q1 = askUserQuestions.pop();
 
     // Display the question text in the questionAskID element
+
     questionAskID.textContent = q1.question;
 
     // Set the src attribute for the left, center, and right images
