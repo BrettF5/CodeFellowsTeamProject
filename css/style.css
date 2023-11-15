@@ -65,9 +65,11 @@ footer{
     text-align: center;
     color: black;
 }
-/*Page 2*/
+/*Page*/
 
-
+section{
+    width: 400px;
+}
 
 
 
