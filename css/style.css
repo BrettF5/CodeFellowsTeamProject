@@ -1,20 +1,26 @@
 
 body{
     color: white;
-    font-family: Abril;
+    font-family: 'Lora';
 }
 
 
 header{
     padding: 40px;
     background-color:#D2B48C;
+    padding: 40px;
     
 }
 h1{
     color:white;
     font-size: 60px;
-    font-family: Abril Fatface;
+    font-family: 'Abril Fatface';
     text-align: center;
+}
+
+nav {
+	text-align: center;
+	padding: 10px;
 }
 .container {
     position: relative;
@@ -49,9 +55,12 @@ z-index: 1; /* Place the overlay image above the background image */
     z-index: 1;
     font-size: 20px;
     border-radius: 12px;
+    font-family: 'Lora';
+    color: #006400;
+   
 }
 
-.button:hover{
+#button: hover {
     background: azure;
 }
 
@@ -63,20 +72,19 @@ z-index: 1; /* Place the overlay image above the background image */
 }
 
 footer{
-    background-color: #006400;
-    padding: 50px;
-    text-align: center;
+	background-color: #006400;
+	color: white;
+	padding: 50px;
+	text-align: center;
 }
-
-
 #localStorageContent {
     position: absolute;
     top: 85%;
     left: 20%;
     text-align: center;
-    color: black;
+    color: #006400;
 }
-/*Page*/
+/*Page 2*/
 
 section{
     width: 700px;
@@ -87,3 +95,54 @@ form{
     color: black;
 }
 
+.backround {
+	background-image: url('/img/cigars/istockphoto-1226721116-612x612.jpg');
+	width: 1135px;
+    height: 800px;
+    margin: auto;
+}
+
+.formContainer {
+	background-color:#D2B48C;
+	text-align: center;
+	width: 800px;
+	margin: auto;
+	opacity: .9;
+	padding: 50px;
+}
+
+
+.listOfCigars {
+	width: 500px;
+	margin: auto;
+}
+
+.cigar-details{
+	
+}
+
+li{
+	list-style: none;
+	margin: 10px;
+	width: 500px;
+	display: inline-block;
+	border: black 1px solid;
+	background-color: white;
+}
+
+.name{
+	float: inline-start;
+}
+
+#button-increase{
+	float: inline-end;
+}
+#button-decrease{
+	float: inline-end;
+}
+
+
+.delete-button{
+	background-color: red;
+	float: inline-end;
+}
