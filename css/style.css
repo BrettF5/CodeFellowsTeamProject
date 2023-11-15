@@ -79,9 +79,11 @@ footer{
 /*Page*/
 
 section{
-    width: 400px;
+    width: 700px;
 }
 
 
-
+form{
+    color: black;
+}
 
