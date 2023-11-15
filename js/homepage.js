@@ -17,8 +17,8 @@ function Cigar(brand, quantity) {
 /////////////////////////////////////////////
 //Function that creates new cigar instances
 ////////////////////////////////////////////
-function initCigar(name,quantity) {
-    const cigarInstance = new Cigar(name,quantity);
+function initCigar(name, quantity) {
+    const cigarInstance = new Cigar(name, quantity);
     allCigars.push(cigarInstance);
     storeCigars();
     return cigarInstance
@@ -48,10 +48,10 @@ let newCigar;
 // Handles submit button
 function handleSubmit(event) {
     event.preventDefault();
-    
+
     // stores values from form
-     cigarName = document.getElementById('cigar-name').value;
-     cigarQuantity = document.getElementById('cigar-quantity').value;
+    cigarName = document.getElementById('cigar-name').value;
+    cigarQuantity = document.getElementById('cigar-quantity').value;
 
     // checks for correct inputs TODO
     if (cigarName === '' || cigarQuantity === '') {
@@ -59,8 +59,8 @@ function handleSubmit(event) {
         return;
     }
 
-     // changes number string to an integer
-     cigarQuantityInt = parseInt(cigarQuantity);
+    // changes number string to an integer
+    cigarQuantityInt = parseInt(cigarQuantity);
 
     // creates list element
     const cigarItem = document.createElement('li');
@@ -73,7 +73,7 @@ function handleSubmit(event) {
     <button class="delete-button">delete</button>
     <button id="button-increase">+</button>
     <button id="button-decrease">-</button>`;
-    
+
     // appends elements
     cigarItem.appendChild(cigarDetails);
     cigarList.appendChild(cigarItem);
@@ -81,23 +81,23 @@ function handleSubmit(event) {
     newCigar = initCigar(cigarName, cigarQuantityInt);
     let btnIncrease = document.getElementById('button-increase');
     let btnDecrease = document.getElementById('button-decrease');
-    btnIncrease.addEventListener('click',handleIncrease)
-    btnDecrease.addEventListener('click',handleDecrease)
-     event.target.reset();
-     
+    btnIncrease.addEventListener('click', handleIncrease)
+    btnDecrease.addEventListener('click', handleDecrease)
+    event.target.reset();
+
 }
 
 function handleIncrease() {
     console.log('button clicked')
-    cigarQuantityInt ++;
-     
+    cigarQuantityInt++;
+
     updateCigarQuantity(newCigar, cigarQuantityInt);
 }
 
 function handleDecrease() {
     console.log('button clicked')
-    cigarQuantityInt --;
-     
+    cigarQuantityInt--;
+
     updateCigarQuantity(newCigar, cigarQuantityInt);
 }
 function updateCigarQuantity(cigar, newQuantity) {
@@ -124,23 +124,27 @@ cigarList.addEventListener('click', handleDelete);
 document.getElementById('button').addEventListener('click', handleShowCigarsButton);
 
 function handleShowCigarsButton() {
-  // Retrieve data from local storage with key 'cigarKey'
-  let localStorageData = localStorage.getItem(cigarKey);
-  console.log('Retrieved data:', localStorageData);
+    // Retrieve data from local storage with key 'cigarKey'
+    let localStorageData = localStorage.getItem(cigarKey);
+    console.log('Retrieved data:', localStorageData);
 
-  // Get the element with the id 'localStorageContent'
-  let localStorageContent = document.getElementById('localStorageContent');
-  renderCigarInventory()
-  // Check if data exists in local storage
-  if (localStorageData) {
-   
-    // Display the local storage data in the 'localStorageContent' element
-    //localStorageContent.textContent = localStorageData;
-  } else {
-    // If no data in local storage, display a message
-    localStorageContent.textContent = 'No cigars found in local storage.';
-  }
+    // Get the element with the id 'localStorageContent'
+    let localStorageContent = document.getElementById('localStorageContent');
+    renderCigarInventory()
+    // Check if data exists in local storage
+    if (localStorageData) {
+        disableButton();
+        // Display the local storage data in the 'localStorageContent' element
+        //localStorageContent.textContent = localStorageData;
+    } else {
+        // If no data in local storage, display a message
+        localStorageContent.textContent = 'No cigars found in local storage.';
+    }
 }
+function disableButton() {
+    document.getElementById('button').disabled = true;
+}
+
 let inventoryList = document.getElementById('localStorageContent');
 
 function renderCigarInventory() {
@@ -158,4 +162,4 @@ function renderCigarInventory() {
     });
 }
 
-renderCigarInventory();
+
