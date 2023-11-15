@@ -57,21 +57,20 @@ li{
 	background-color: white;
 }
 
-span{
-	margin: ;
-}
+
 
 .name{
 	float: inline-start;
 }
 
-#button-plus{
+#button-increase{
+	float: inline-end;
+}
+#button-decrease{
 	float: inline-end;
 }
 
-#button-minus{
-	float: inline-end;
-}
+
 .delete-button{
 	background-color: red;
 	float: inline-end;
