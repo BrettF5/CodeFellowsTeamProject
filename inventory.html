@@ -4,19 +4,20 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 
-		<link rel="stylesheet" type="text/css" href="css/inventory.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<title></title>
 	</head>
 	<body>
         <header>
-            <h1><img class="logo" src="img/cigars/DCV logo.png" alt="DCV logo"> Cigar Vault</h1>
+            <img class="logo" src="img/cigars/DCV logo.png" alt="DCV logo">
+            <h1> Cigar Vault</h1>
             <nav>
                 <a href="index.html">Home</a>
             </nav>
         </header>
-		<main>
-            <div class="container">
+		<main class="backround">
+            <div class="formContainer">
                 <form id="addCigarForm">
                     <label>Cigar Name:</label>
                     <input id="cigar-name"  type="text" >
@@ -24,7 +25,7 @@
                     <input id="cigar-quantity" type="text" >
                     <button type="submit">add cigar</button>
                 </form>
-                <ul id="cigar-list"></ul>
+                <ul class="listOfCigars"id="cigar-list" ></ul>
                 <div id="renderCigar"></div>
                 <div id="inventory-list"></div>
             </div>
