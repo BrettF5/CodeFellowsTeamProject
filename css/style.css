@@ -1,17 +1,20 @@
 
 body{
     color: white;
+    font-family: Abril;
 }
 
 
 header{
-    padding: 50px;
-    background-color: black;
+    padding: 40px;
+    background-color:#D2B48C;
     
 }
 h1{
     color:white;
-    font-size: 25px;
+    font-size: 60px;
+    font-family: Abril Fatface;
+    text-align: center;
 }
 .container {
     position: relative;
@@ -41,7 +44,7 @@ z-index: 1; /* Place the overlay image above the background image */
     top: 72%;
     left: 46%;
     width: 100px;
-    background-color: orange;
+    background-color:#DAA520;
     padding: 10px;
     z-index: 1;
     font-size: 20px;
@@ -52,9 +55,17 @@ z-index: 1; /* Place the overlay image above the background image */
     background: azure;
 }
 
+
+.logo {
+    height: 100px;
+    width: 100px;
+
+}
+
 footer{
-    background-color: black;
+    background-color: #006400;
     padding: 50px;
+    text-align: center;
 }
 
 
@@ -65,9 +76,11 @@ footer{
     text-align: center;
     color: black;
 }
-/*Page 2*/
+/*Page*/
 
-
+section{
+    width: 400px;
+}
 
 
 
