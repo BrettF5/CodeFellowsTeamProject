@@ -18,10 +18,11 @@
 		<main>
             <div class="container">
                 <form id="addCigarForm">
-                    <label>Cigar Name:</label>
-                    <input id="cigar-name"  type="text" >
-                    <label>Quantity:</label>
-                    <input id="cigar-quantity" type="text" >
+                    <label for="cigar-name">Cigar Name:</label>
+                    <input type="text" id="cigar-name" required>
+                
+                    <label for="cigar-quantity">Quantity:</label>
+                    <input type="number" id="cigar-quantity" required>
                     <button type="submit">add cigar</button>
                 </form>
                 <ul id="cigar-list"></ul>
