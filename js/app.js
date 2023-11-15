@@ -35,28 +35,10 @@ function storeCigars() {
 
 function getCigar() {
     const storedCigarText = localStorage.getItem(cigarKey);
-    return storedCigarText ? JSON.parse(storedCigarText) : [];
+    return JSON.parse(storedCigarText) || [];
 }
 
 
-const inventoryList = document.getElementById('inventory-list');
-
-function renderCigarInventory() {
-    const ul = document.createElement('ul');
-    inventoryList.appendChild(ul);
-
-    // Get the stored cigars
-    const storedCigars = getCigar();
-
-    // Loop through the stored cigars and render them
-    storedCigars.forEach(cigar => {
-        const li = document.createElement('li');
-        ul.appendChild(li);
-        li.textContent = `Name: ${cigar.brand}, Quantity: ${cigar.quantity}`;
-    });
-}
-
-renderCigarInventory();
 
 ///////////////////////
 ///Form/Event Handler
