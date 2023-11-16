@@ -167,14 +167,22 @@ li{
     background-color: aliceblue;
 }
 .hidden{
-    display: none;
+    /* display: none; */
 }
 .mainpage-image{
+
     background-image: url(../img/cigars/humid.jpg);
+
     height: 600px;
+    margin: auto;
+    width: 1000px;
 }
 form{
     color: black;
+}
+
+.avgHumidity{
+    font-size: 25px;
 }
  #humidity-container{
     text-align: center;
