@@ -5,21 +5,47 @@ body{
 
 
 header{
-    padding: 40px;
     background-color:#D2B48C;
-    padding: 40px;
+    display: flex;
+    justify-content: center;
     
 }
 h1{
     color:white;
     font-size: 60px;
     font-family: 'Abril Fatface';
-    text-align: center;
+    margin:0;
+    margin-top: 40px;
 }
 
 nav {
 	text-align: center;
 	padding: 10px;
+    background-color: #D2B48C;
+}
+nav a {
+    padding: 50px;
+    text-decoration: none;
+    color: #3E2723
+}
+
+nav a:hover {
+    color:#006400;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+
+.logo {
+    height: auto;
+    width: 100px;
+    border: 20px solid #3E2723;
+    border-radius:20px;
+    margin-right: 10px;
+
+
+
 }
 .container {
     position: relative;
@@ -59,16 +85,11 @@ z-index: 1; /* Place the overlay image above the background image */
    
 }
 
-#button: hover {
-    background: azure;
+#button:hover {
+    background:#53a7ea;
+    
 }
 
-
-.logo {
-    height: 100px;
-    width: 100px;
-
-}
 
 footer{
 	background-color: #006400;
@@ -77,33 +98,32 @@ footer{
 	text-align: center;
 }
 #localStorageContent {
+    margin-left: 100px;
     position: absolute;
+    width: 500px;
     top: 85%;
     left: 20%;
     text-align: center;
     color: #006400;
+    
 }
-/*Page 2*/
+/* //////////////////Page 2///////////////// */
 
 section{
     width: 700px;
 }
 
 
-form{
-    color: black;
-}
-
-
 .backround {
-	background-image: url('/img/cigars/istockphoto-1226721116-612x612.jpg');
+	background-image: url('./img/cigars/istockphoto-1226721116-612x612.jpg');
 	width: 1135px;
     height: 800px;
     margin: auto;
 }
 
 .formContainer {
-	background-color:#D2B48C;
+    color:#DAA520;
+	background-color: #006400;
 	text-align: center;
 	width: 800px;
 	margin: auto;
@@ -113,13 +133,11 @@ form{
 
 
 .listOfCigars {
+    color:black;
 	width: 500px;
 	margin: auto;
 }
 
-.cigar-details{
-	
-}
 
 li{
 	list-style: none;

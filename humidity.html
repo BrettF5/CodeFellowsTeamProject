@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,37 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Cigar Humidity Tracker</title>
 </head>
+
 <body>
 
     <header>
+        <img class="logo" src="img/cigars/DCV logo.png" alt="DCV logo">
         <h1>Cigar Humidity Tracker</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="inventory.html">Add Cigar</a>
-            <a href="page3.html">Find Something New</a>
-            
-        </nav>
     </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="inventory.html">Add Cigar</a>
+        <a href="page3.html">Find Something New</a>
+    </nav>
+
 
     <div id="humidity-container">
         <form id="humidity-form">
-           
+
             <label for="desired-humidity">Humidity Level</label>
             <input type="number" id="humidity" name="humidity" min="0" max="100">
             <button type="button" id="submit-btn" onclick="">display results</button>
         </form>
-      
+
     </div>
     <section id="showResults">charts
         <canvas id="myChart" width="400" height="200"></canvas>
     </section>
     <footer>
-        <p>&copy; 2023 Cigar 
+        <p>&copy; 2023 Cigar
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
     <script src="/js/tracker.js"></script>
 </body>
+
 </html>
