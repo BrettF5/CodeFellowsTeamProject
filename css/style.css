@@ -1,6 +1,8 @@
 /* Global Styles */
 body{
-    font-family: 'Lora';
+    font-family: 'Abril Fatface', serif;
+    font-family: 'Righteous', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 header{
@@ -197,13 +199,19 @@ height: 25px;
 
 #submit-btn{
 height: 25px;
+background-color:#DAA520;
+font-size: 15px;
+border-radius: 4px;
 } 
 
+#submit-btn:hover{
+    background-color: white;
+}
 /* Find Something New Page */
 
 .page3background {
 background-color: #dcdcdc;
-height: 700px;
+height: 550px;
 }
 
 .pElement{
