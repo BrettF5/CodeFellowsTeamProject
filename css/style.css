@@ -194,3 +194,25 @@ height: 25px;
 #submit-btn{
 height: 25px;
 } 
+
+/* Find Something New Page */
+
+.page3background {
+background-color: #dcdcdc;
+}
+
+.pElement{
+    text-align: center;
+    font-size: 36px;
+}
+
+.section {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+}
+
+.returnQuestion {
+    text-align: center;
+    font-size: 36px;
+}

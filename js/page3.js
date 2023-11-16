@@ -14,6 +14,7 @@ const leftImg = document.getElementById('img1');
 const centerImg = document.getElementById('img2');
 const rightImg = document.getElementById('img3');
 const returnCigarUser = document.getElementById('returnCigar');
+const suggestImgDisplay = document.getElementById('suggestImg')
 
 // Constructor function for AskQuestion objects
 function AskQuestion(question, img1, img2, img3) {
@@ -84,12 +85,16 @@ function endClick() {
 }
 
 function returnCigarType() {
+    // Set the src attribute for the mild, medium, bold cigar
+    
+
     if (leftProduct > centerProduct && leftProduct > rightProduct) {
         returnCigarUser.textContent = 'I recommend a mild cigar';
     } else if (centerProduct > leftProduct && centerProduct > rightProduct) {
         returnCigarUser.textContent = 'I recommend a medium cigar';
     } else {
-        returnCigarUser.textContent = 'I recommend a bold cigar';
+        returnCigarUser.textContent = 'I recommend a full body Oliva Serie V';
+        suggestImgDisplay.setAttribute('src', 'img/cigars/Oliva1.jpg');
     }
 }
 
