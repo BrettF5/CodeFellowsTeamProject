@@ -114,13 +114,7 @@ footer{
 }
 
 .backround {
-<<<<<<< HEAD
-	background-image: url('../img/cigars/cigarBackGround.jpg');
-    background-size: cover;
-=======
-	background-image: url('./img/cigars/istockphoto-1226721116-612x612.jpg');
-in
->>>>>>> 476f5c0837c9e2002c7d05c6f73192044123e041
+	background-image: url('../img/cigars/istockphoto-1226721116-612x612.jpg');
 	width: 1135px;
     height: 800px;
     margin: auto;
