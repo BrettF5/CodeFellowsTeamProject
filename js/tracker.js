@@ -6,6 +6,7 @@ let chartInstance = null;
 const humidityData = 'humidity-data';
 let chart = document.querySelector('.chart');
 let clicks = 0;
+let storedHumidityData = humidityData
 
 //Function that calculates the average daily humidity
 function avgHumidty(){
@@ -27,20 +28,40 @@ for (let i = 0; i < humidityValue.length; i++) {
   }
 
 }
+let humidityDays = humidityInput.value;
+// ////////////////// Local Storage//////////////////////
+
+function saveHumidity(value) {
+  console.log(value);
+    let existingData = getHumidityData();
+    existingData.push(value);
+    localStorage.setItem('humidityData', JSON.stringify(existingData));
+  } 
+
+
+function getHumidityData() {
+
+    const storedHumidityData = localStorage.getItem('humidityData');
+    return JSON.parse(storedHumidityData) || [];
+  
+  }
+
 
 //function that handles button
 function handleClick (event){
     event.preventDefault();
-    let humidityDays = humidityInput.value;
+   humidityDays = humidityInput.value;
+   console.log(humidityDays)
     humidityValue.push(humidityDays);
     chart.classList.remove('hidden')
     event.target.form.reset();
     avgHumidty();
-    renderChart();
+    renderChart(humidityValue); 
+    saveHumidity(humidityDays);
 }
-
-renderChart();
 btn.addEventListener('click',handleClick);
+renderChart(humidityValue); 
+
 
 // Function to render the chart
 
@@ -77,31 +98,20 @@ function renderChart() {
       data: data,
       options: options,
     };
-
+  
     const ctx = document.getElementById('myChart').getContext('2d');
     chartInstance = new Chart(ctx, config);
-//////////////////
-///Local Storage
-//////////////////
 
-// Function to save humidity data to local storage
-function saveHumidity(value) {
-  var existingData = getHumidityData();
-  existingData.push(value);
-  localStorage.setItem('humidityData', JSON.stringify(existingData));
-}
+  }
 
-// Function to get humidity data from local storage
-function getHumidityData() {
-  return JSON.parse(localStorage.getItem('humidityData')) || [];
-}
+
 
 // Check for existing data on page load and render chart if available
 window.onload = function () {
   const existingData = getHumidityData();
 
-  if (existingData.length < 0) {
+  if (existingData.length > 0) {
+    humidityValue = existingData;
     renderChart();
   }
-}
 }
