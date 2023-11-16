@@ -89,9 +89,11 @@ function returnCigarType() {
     
 
     if (leftProduct > centerProduct && leftProduct > rightProduct) {
-        returnCigarUser.textContent = 'I recommend a mild cigar';
+        returnCigarUser.textContent = 'I recommend a Brick House Toro Connecticut cigar which is a melllower flavored cigar.';
+        suggestImgDisplay.setAttribute('src', 'img/cigars/brickhouseMild.jpg');
     } else if (centerProduct > leftProduct && centerProduct > rightProduct) {
-        returnCigarUser.textContent = 'I recommend a medium cigar';
+        returnCigarUser.textContent = 'I recommend a Plasencia Reserva Orginal Cortez cigar which is a medium body cigar from Honduras.';
+        suggestImgDisplay.setAttribute('src', 'img/cigars/plasenciaMed.jpg');
     } else {
         returnCigarUser.textContent = 'I recommend a full body Oliva Serie V';
         suggestImgDisplay.setAttribute('src', 'img/cigars/Oliva1.jpg');

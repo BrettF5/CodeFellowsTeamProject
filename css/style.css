@@ -88,11 +88,7 @@ z-index: 1; /* Place the overlay image above the background image */
 }
 
 #button:hover {
-tracker-storage
-
     background:#53a7ea;
-    
-
 }
 
 
@@ -174,7 +170,7 @@ li{
     display: none;
 }
 .mainpage-image{
-    background-image: url(/img/cigars/humid.jpg);
+    background-image: url(../img/cigars/humid.jpg);
     height: 600px;
 }
 form{
@@ -199,6 +195,7 @@ height: 25px;
 
 .page3background {
 background-color: #dcdcdc;
+height: 700px;
 }
 
 .pElement{
@@ -215,4 +212,10 @@ background-color: #dcdcdc;
 .returnQuestion {
     text-align: center;
     font-size: 36px;
+}
+
+.cigarRecom {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
 }
