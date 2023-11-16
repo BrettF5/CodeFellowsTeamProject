@@ -29,7 +29,7 @@ function handleClick (event){
   } else {
     alert('Please enter a valid humidity value.');
   }
-}
+
 
 
 // Function to render the chart
@@ -92,4 +92,5 @@ window.onload = function () {
   if (existingData.length > 0) {
     renderChart();
   }
-};
+}
+}
