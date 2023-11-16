@@ -1,8 +1,7 @@
-
+/* Global Styles */
 body{
     font-family: 'Lora';
 }
-
 
 header{
     padding: 40px;
@@ -21,6 +20,8 @@ nav {
 	text-align: center;
 	padding: 10px;
 }
+
+/* Home Page Stlyes */
 .container {
     position: relative;
     width: 1200px;
@@ -34,6 +35,7 @@ width: 100%;
 height: 100%;
 object-fit: cover; /* Maintain aspect ratio while covering the container */
 opacity: .5;
+
 }
 
 .cigar-box {
@@ -59,7 +61,7 @@ z-index: 1; /* Place the overlay image above the background image */
    
 }
 
-#button: hover {
+#button:hover {
     background: azure;
 }
 
@@ -83,19 +85,9 @@ footer{
     text-align: center;
     color: #006400;
 }
-/*Page 2*/
 
-section{
-    width: 700px;
-}
-
-
-form{
-    color: black;
-}
-
-
-.backround {
+/* Inventory Page */
+.background {
 	background-image: url('/img/cigars/istockphoto-1226721116-612x612.jpg');
 	width: 1135px;
     height: 800px;
@@ -115,10 +107,6 @@ form{
 .listOfCigars {
 	width: 500px;
 	margin: auto;
-}
-
-.cigar-details{
-	
 }
 
 li{
@@ -146,3 +134,35 @@ li{
 	background-color: red;
 	float: inline-end;
 }
+/* Humidity Tracker Page */
+
+.chart{
+    width: 700px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: aliceblue;
+}
+.hidden{
+    display: none;
+}
+.main-img{
+    background-image: url(/img/cigars/humid.jpg);
+    height: 600px;
+}
+form{
+    color: black;
+}
+ #humidity-container{
+    text-align: center;
+}
+.humid-label{
+    font-size: 25px;
+}
+
+#humidity{
+height: 25px;
+}
+
+#submit-btn{
+height: 25px;
+} 

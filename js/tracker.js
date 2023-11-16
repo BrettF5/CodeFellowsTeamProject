@@ -1,9 +1,10 @@
 let daysOfWeek = ['Mon','Tues','Wed','Thurs','Fri','Sat','Sun'];
 let humidityInput = document.getElementById('humidity');
-let humidDays = [];
+let humidityValue = [];
 let btn = document.getElementById('submit-btn');
 let chartInstance = null;
-
+let humidityData = 'humidity-data';
+let chart = document.querySelector('.chart');
 btn.addEventListener('click',handleClick);
 
 function handleClick (event){
@@ -11,13 +12,18 @@ function handleClick (event){
     console.log('button Clicked')
     let humidityDays = humidityInput.value;
     console.log(humidityDays);
-    humidDays.push(humidityDays);
-
-event.target.form.reset();
-renderChart();
+    humidityValue.push(humidityDays);
+    chart.classList.remove('hidden')
+  event.target.form.reset();
+  renderChart();
 }
+//////////////////
+///Local Storage
+//////////////////
 
 
+
+storeData();
 function renderChart() {
 
   if (chartInstance) {
@@ -28,8 +34,9 @@ function renderChart() {
       labels: labels,
       datasets: [{
         label: 'Humidity Data',
-        data: humidDays ,
+        data: humidityValue ,
         fill: false,
+        borderColor: 'rgb(75, 192, 192)', 
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1
       }]
