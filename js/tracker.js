@@ -1,36 +1,46 @@
-let daysOfWeek = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
-let humidityInput = document.getElementById('humidity');
+const daysOfWeek = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+const humidityInput = document.getElementById('humidity');
 let humidityValue = [];
-let btn = document.getElementById('submit-btn');
+const btn = document.getElementById('submit-btn');
 let chartInstance = null;
-let humidityData = 'humidity-data';
+const humidityData = 'humidity-data';
 let chart = document.querySelector('.chart');
-btn.addEventListener('click',handleClick);
+let clicks = 0;
 
-function handleClick (event){
-    event.preventDefault();
-    console.log('button Clicked')
-    let humidityDays = humidityInput.value;
-    console.log(humidityDays);
-    humidityValue.push(humidityDays);
-    chart.classList.remove('hidden')
-  event.target.form.reset();
-  renderChart();
+//Function that calculates the average daily humidity
+function avgHumidty(){
+const intArray = [];
+clicks ++;
+
+for (let i = 0; i < humidityValue.length; i++) {
+  intArray.push(parseInt(humidityValue[i], 10));
 }
-//////////////////
-///Local Storage
-//////////////////
 
+  if (clicks === 5) {
+    let sumHumidity = 0;
 
-  if (humidityValue.trim() !== '') {
-    saveHumidity(humidityValue);
-    renderChart();
-    event.target.form.reset();
-  } else {
-    alert('Please enter a valid humidity value.');
+    for (let i = 0; i < intArray.length; i++) {
+      sumHumidity += intArray[i];
+    }
+    const averageHumidity = sumHumidity / intArray.length;
+    document.querySelector('.avgHumidity').textContent = `Your average daily humidity level is ${averageHumidity}%`;
   }
 
+}
 
+//function that handles button
+function handleClick (event){
+    event.preventDefault();
+    let humidityDays = humidityInput.value;
+    humidityValue.push(humidityDays);
+    chart.classList.remove('hidden')
+    event.target.form.reset();
+    avgHumidty();
+    renderChart();
+}
+
+renderChart();
+btn.addEventListener('click',handleClick);
 
 // Function to render the chart
 
@@ -70,13 +80,15 @@ function renderChart() {
 
     const ctx = document.getElementById('myChart').getContext('2d');
     chartInstance = new Chart(ctx, config);
+//////////////////
+///Local Storage
+//////////////////
 
 // Function to save humidity data to local storage
 function saveHumidity(value) {
   var existingData = getHumidityData();
   existingData.push(value);
   localStorage.setItem('humidityData', JSON.stringify(existingData));
-  console.log('Humidity Data Saved:', existingData);
 }
 
 // Function to get humidity data from local storage
@@ -87,9 +99,8 @@ function getHumidityData() {
 // Check for existing data on page load and render chart if available
 window.onload = function () {
   const existingData = getHumidityData();
-  console.log('Existing Humidity Data:', existingData);
 
-  if (existingData.length > 0) {
+  if (existingData.length < 0) {
     renderChart();
   }
 }
