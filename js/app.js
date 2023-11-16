@@ -6,6 +6,8 @@ let cigarQuantity = document.getElementById('cigar-quantity');
 let allCigars = [];
 let cigarKey = 'cigar-key';
 let cigarQuantityInt = 0;
+let storedCigarText = "";
+let storedCigars = "";
 
 //////////////////////
 ///Cigar Constructor
@@ -22,7 +24,8 @@ function Cigar(brand, quantity) {
 function initCigar(name,quantity) {
     const cigarInstance = new Cigar(name,quantity);
     allCigars.push(cigarInstance);
-    storeCigars();
+    console.log("new", allCigars);
+    // storeCigars();
     return cigarInstance
 }
 
@@ -30,11 +33,23 @@ function initCigar(name,quantity) {
 ///Functions for local storage
 ///////////////////////////////
 function storeCigars() {
+    storedCigarText = localStorage.getItem(cigarKey);
+    storedCigars = storedCigarText ? JSON.parse(storedCigarText) : {};
+    console.log("parsed", storedCigars);
+    storedCigars.forEach(element => {
+        initCigar(element.brand, element.quantity);
+    });
+    // Update the retrieved data with new information
+    // const newData = { cigars: allCigars };
+    // Object.assign(storedCigars, newData);
+    // console.log(storedCigars);
+
     localStorage.setItem(cigarKey, JSON.stringify(allCigars));
+    console.log('Data is stored:', allCigars);
 }
 
 function getCigar() {
-    const storedCigarText = localStorage.getItem(cigarKey);
+    storedCigarText = localStorage.getItem(cigarKey);
     return JSON.parse(storedCigarText) || [];
 }
 
@@ -48,10 +63,12 @@ function getCigar() {
 const form = document.getElementById('addCigarForm');
 const cigarList = document.getElementById('cigar-list');
 let newCigar;
+console.log(allCigars);
 
 // Handles submit button
 function handleSubmit(event) {
     event.preventDefault();
+    console.log(allCigars);
     
     // stores values from form
      cigarName = document.getElementById('cigar-name').value;
@@ -83,6 +100,7 @@ function handleSubmit(event) {
     cigarList.appendChild(cigarItem);
 
     newCigar = initCigar(cigarName, cigarQuantityInt);
+    storeCigars();
     let btnIncrease = document.getElementById('button-increase');
     let btnDecrease = document.getElementById('button-decrease');
     btnIncrease.addEventListener('click',handleIncrease)
