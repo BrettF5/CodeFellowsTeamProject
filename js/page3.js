@@ -24,11 +24,11 @@ function AskQuestion(question, img1, img2, img3) {
 }
 
 // Sample AskQuestion instances
-const questionOne = new AskQuestion('Which Food do you prefer?', 'https://placehold.co/200x300?text=mild+food', 'https://placehold.co/200x300?text=medium+food', 'https://placehold.co/200x300?text=bold+food');
+const questionOne = new AskQuestion('Which Food do you prefer?', 'img/cigars/mildCake.jpg', 'img/cigars/midCake.jpg', 'img/cigars/boldCake.jpg');
 askUserQuestions.push(questionOne);
-const questionTwo = new AskQuestion('Which whisky do you prefer?', 'https://placehold.co/200x300?text=mild+whiskey', 'https://placehold.co/200x300?text=medium+whiskey', 'https://placehold.co/200x300?text=bold+whiskey');
+const questionTwo = new AskQuestion('Which whisky do you prefer?', 'img/cigars/FortyCreekMild.jpg', 'img/cigars/JamersonIrishMid.jpg', 'img/cigars/JohnnieWalkerBold.jpg');
 askUserQuestions.push(questionTwo);
-const questionThree = new AskQuestion('Which beer do you prefer?', 'https://placehold.co/200x300?text=mild+beer', 'https://placehold.co/200x300?text=medium+beer', 'https://placehold.co/200x300?text=bold+beer');
+const questionThree = new AskQuestion('Which beer do you prefer?', 'img/cigars/MildBeer.jpg', 'img/cigars/MidBeer.jpg', 'img/cigars/BoldBeer.jpg');
 askUserQuestions.push(questionThree);
 
 function renderQuestion() {
