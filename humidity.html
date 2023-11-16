@@ -15,6 +15,13 @@
         <img class="logo" src="img/cigars/DCV logo.png" alt="DCV logo">
         <h1>Cigar Humidity Tracker</h1>
     </header>
+
+<main class="main-img">
+    <div id="humidity-container">
+        <form id="humidity-form">
+           
+            <label class="humid-label" for="desired-humidity">Humidity Level</label>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="inventory.html">Add Cigar</a>
@@ -22,18 +29,18 @@
     </nav>
 
 
-    <div id="humidity-container">
-        <form id="humidity-form">
+    
 
-            <label for="desired-humidity">Humidity Level</label>
             <input type="number" id="humidity" name="humidity" min="0" max="100">
-            <button type="button" id="submit-btn" onclick="">display results</button>
+            <button type="button" id="submit-btn" onclick="">Display Results</button>
         </form>
 
     </div>
-    <section id="showResults">charts
+    <section class="chart hidden" id="showResults">
+        
         <canvas id="myChart" width="400" height="200"></canvas>
     </section>
+</main> 
     <footer>
         <p>&copy; 2023 Cigar
     </footer>
