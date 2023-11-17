@@ -55,12 +55,13 @@ function handleClick (event){
     humidityValue.push(humidityDays);
     chart.classList.remove('hidden')
     event.target.form.reset();
-    avgHumidty();
+    
     renderChart(humidityValue); 
     saveHumidity(humidityDays);
+    avgHumidty();
 }
 btn.addEventListener('click',handleClick);
-renderChart(humidityValue); 
+//renderChart(humidityValue); 
 
 
 // Function to render the chart
@@ -68,8 +69,7 @@ renderChart(humidityValue);
 function renderChart() {
   if (chartInstance) {
     chartInstance.destroy();
-
-}
+  }
     const labels = daysOfWeek ;
     const data = {
       labels: labels,
@@ -102,7 +102,7 @@ function renderChart() {
     const ctx = document.getElementById('myChart').getContext('2d');
     chartInstance = new Chart(ctx, config);
 
-  }
+}
 
 
 

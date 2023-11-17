@@ -148,7 +148,7 @@ function disableButton() {
 let inventoryList = document.getElementById('localStorageContent');
 
 function renderCigarInventory() {
-    const ul = document.createElement('ul');
+    const ul = document.createElement('li');
     inventoryList.appendChild(ul);
 
     // Get the stored cigars
