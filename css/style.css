@@ -1,8 +1,7 @@
 /* Global Styles */
 body{
     font-family: 'Abril Fatface', serif;
-    font-family: 'Righteous', sans-serif;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Lora', sans-serif;
 }
 
 header{
@@ -49,7 +48,7 @@ nav a:hover {
 
 }
 
-/* Home Page Stlyes */
+/* ///////////////////////// Home Page Styles //////////////////////// */
 .container {
     position: relative;
     width: 1200px;
@@ -101,7 +100,7 @@ footer{
 	text-align: center;
 }
 #localStorageContent {
-    margin-left: 100px;
+    margin-left: 120px;
     position: absolute;
     width: 500px;
     top: 85%;
@@ -110,7 +109,7 @@ footer{
     color: #006400;
     
 }
-
+/* //////////////////////// Page 2 Inventory ////////////////////////////// */
 .background {
 	background-image: url('../img/cigars/cigarBackGround.jpg');
 	width: 1135px;
@@ -119,7 +118,7 @@ footer{
 }
 
 .formContainer {
-    color:#DAA520;
+
 	background-color: #006400;
 	text-align: center;
 	width: 800px;
@@ -127,8 +126,17 @@ footer{
 	opacity: .9;
 	padding: 50px;
 }
-
-
+#addCigarForm {
+    color:#DAA520;
+}
+#addCigarButton {
+    background-color:#DAA520;
+    font-family: 'Lora';
+    color: #1f1412
+}
+#addCigarButton:hover {
+    background:#53a7ea;
+}
 .listOfCigars {
     color:black;
 	width: 500px;
@@ -137,8 +145,7 @@ footer{
 
 li{
 	list-style: none;
-	margin: 10px;
-	width: 500px;
+	width: 500px; 
 	display: inline-block;
 	border: black 1px solid;
 	background-color: white;
@@ -160,7 +167,7 @@ li{
 	background-color: red;
 	float: inline-end;
 }
-/* Humidity Tracker Page */
+/*////////////////////// Humidity Tracker Page///////////////////////// */
 
 .chart{
     width: 700px;
@@ -172,9 +179,7 @@ li{
      display: none; 
 }
 .mainpage-image{
-
     background-image: url(../img/cigars/images.jpeg);
-
     height: 600px;
     margin: auto;
     width: 1000px;
@@ -184,12 +189,17 @@ form{
 }
 
 .avgHumidity{
+    font-family: 'Lora';
+    color:#1f1412;
     font-size: 25px;
 }
  #humidity-container{
     text-align: center;
+    font-family: 'Lora';
 }
 .humid-label{
+
+    color:#1f1412;
     font-size: 25px;
 }
 
@@ -198,6 +208,8 @@ height: 25px;
 }
 
 #submit-btn{
+color:#006400;
+font-family: 'Lora';
 height: 25px;
 background-color:#DAA520;
 font-size: 15px;
@@ -205,16 +217,19 @@ border-radius: 4px;
 } 
 
 #submit-btn:hover{
-    background-color: white;
+    background-color:#53a7ea;
 }
-/* Find Something New Page */
+/* ///////////////////////////Find Something New Page//////////////////////////// */
 
 .page3background {
-background-color: #dcdcdc;
+background-color:white;
 height: 550px;
 }
 
 .pElement{
+    color:#3E2723;
+    background-color: white;
+    font-family: 'Lora';
     text-align: center;
     font-size: 36px;
 }
@@ -226,6 +241,8 @@ height: 550px;
 }
 
 .returnQuestion {
+    font-family: 'Lora';
+    color:#3E2723;
     text-align: center;
     font-size: 36px;
 }
